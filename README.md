@@ -3,7 +3,9 @@
 
 ## Description
 
-This project is a sample project to demonstrate the structure and content of a README file.
+The justStory book list application is a convenient tool for literature lovers.
+It allows users to track upcoming book releases and find places where they can purchase or read e-books via subscription. Users can create accounts, log in and add titles of interest to their "To read" list.
+​
 
 ## Table of Contents
 
