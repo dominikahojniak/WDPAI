@@ -1,0 +1,211 @@
+nav{
+    background-color: #1F1910;
+    width: calc(100vw - 2rem);
+    height: 90px;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 1px #13100A; /* Dodaj cień */
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+nav li {
+    display: inline; /* Umieszczenie elementów listy obok siebie (poziomo) */
+    margin-right: 100px; /* Dodanie odstępu między elementami listy */
+}
+
+nav a {
+    text-decoration: none; /* Usuń podkreślenie */
+    color: #BFAEA0;
+    font-family: 'Roboto', sans-serif;
+    font-size:20px;
+    font-weight: 800;
+}
+nav li a[href="premieres.html"] {
+    color: #394130; /* Kolor, jaki chcesz ustawić */
+}
+nav li img {
+    width: 36px; /* Dostosuj szerokość według potrzeb */
+    height: 39px; /* Dostosuj wysokość według potrzeb */
+    margin-right: 5px; /* Odstęp między obrazem a tekstem linku */
+    vertical-align: bottom;
+}
+body{
+    background-color: #1F1910;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    flex-direction: column;
+}
+main{
+    flex: 1;
+    display: flex;
+  flex-direction: column; /* Ustawia układ flexboxa na kolumnowy, aby elementy były pod sobą */
+  align-items: center; /* Wyśrodkuj elementy na osi poziomej */
+  justify-content: center; /* Wyśrodkuj elementy na osi pionowej */
+  margin-bottom: 0px;
+  margin-top: 250px;
+}
+main >.premieres{
+    background-color: #1F1910;
+    width: calc(100vw - 30rem);
+    font-size: 40px;
+    font-family:Grandstander;
+    color: #BFAEA0;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 1px #13100A; /* Dodaj cień */
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+.news{
+    width: calc(100vw - 30rem);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: flex-start; 
+}
+.news-container{
+    width: calc(100vw - 30rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 1px #13100A; /* Dodaj cień */
+}
+.news-container > img{
+    margin-bottom: 10px;
+}
+.date {
+    margin-top: 0; 
+    color: #BFAEA0;
+    font-size: 40px;
+    font-family:Grandstander;
+    font-weight: 600;
+}
+.news-description  {
+    margin-left: calc(100vw - 30rem - 133px - 350px);
+    height: 176px;
+    display: flex;
+    align-items: flex-end;
+
+}
+.news-description p {
+    margin-top: 0; 
+    margin-bottom: 0; 
+    color: #BFAEA0;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    margin-bottom: 10px;
+
+}
+footer {
+    background-color: #0F0C08;
+    opacity: 0.65;
+    color: #BFAEA0;
+    width: calc(100vw - 2rem);
+    height: 90px;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+footer li {
+    display: inline; /* Umieszczenie elementów listy obok siebie (poziomo) */
+    margin-right: 100px; /* Dodanie odstępu między elementami listy */
+    font-family: 'Roboto', sans-serif;
+    font-size:20px;
+    font-weight: 800;
+}
+@media (max-width: 400px) {
+    nav{
+        position: fixed;
+        bottom: 0;
+        top: auto; 
+        box-shadow: 0 -2px 1px #13100A; /* Dodaj cień */
+    }
+    nav li {
+        align-items: center;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    nav a {
+        font-size:14px;
+        font-weight: 700;
+        display: block;
+    }
+    li a {
+        margin-left: 10px;
+    }
+    main{
+        margin-bottom: auto;
+        margin-top: 150px;
+    }
+    main >.premieres{
+        width: 390px;
+        height: 90px;
+        font-size: 40px;
+        margin: 10px 0px;
+        position: fixed;
+        top: 0;
+        margin-top: 0px;
+        display: flex;
+        align-items: flex-end;
+    }
+    .news-container > img{
+        margin-right: 10px;
+    }
+    .news{
+        width: 390px;
+        min-height: calc(100% + 0px);
+        margin-top: 100px;
+    }
+    .news-container{
+        width: 390px;
+    }
+    .news-description  {
+        margin-left: 50px;
+        height: 156px;
+    
+    }
+    .news-description p {
+        font-size: 14px;
+        margin-bottom: 0px;
+        text-align: center;
+    }
+    .date {
+        width: calc(100wv - 176px);
+        font-size: 36px;
+        font-family:Grandstander;
+        font-weight: 600;
+       text-align: center;
+       display: flex;
+       align-self: flex-end;
+    }
+    .images-container{
+        display: none;
+    }
+    footer {
+        display: none;
+    }
+}

@@ -1,0 +1,123 @@
+body{
+    background-color: #1F1910;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login{
+    background-color: #1F1910;
+            width: 50vw;
+            height: 50vh;
+            border-radius: 2rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+}
+.form{
+    display: flex;
+        flex-direction: column; 
+        gap: 0.5rem;
+        margin-right: 150px;
+        align-items: center;
+}
+/* Nowe style dla obrazów */
+.images-container {
+    display: flex;
+    flex-direction: column; /* Ustawienie na pionowe ustawienie obrazów */
+    margin-right: 100px;
+    }
+#login-title{
+    color: #BFAEA0;
+    font-family: 'Grandstander', cursive;
+    font-size: 64px;
+    margin-bottom: 100px;
+
+}
+#login-button{
+    color: #FFFF;
+    background-color: rgba(60, 76, 50, 0.3499999940395355);
+    font-family: 'Roboto', sans-serif;
+    font-size:24px;
+    width: 384px;
+    height: 67px;
+    border-radius: 7px;
+    margin-top: 100px;
+}
+#email, #password{
+    background-color:#BFAEA0;
+    height:71px;
+    width:374px;
+    border-radius:7px;
+    text-align:left;
+    font-size:24px;
+    font-family:'Roboto', sans-serif;
+    opacity: 0.55;
+
+}
+#email::placeholder , #password::placeholder {
+    color:#FFFF;
+    font-family:'Roboto', sans-serif;
+    opacity: 0.8;
+}
+.group7 {
+    display: flex;
+    flex-direction: row; /* Ustawienie na poziome ustawienie elementów w grupie */
+    gap: 1rem;
+    width: 100%;
+    margin-top: 100px; /* Dodatkowy odstęp od góry */
+}
+
+.donthaveanaccount{
+color:#f1dcd0;
+text-align:center;
+vertical-align:text-top;
+font-size:22px;
+font-family:Grandstander;
+width:269px;
+}
+.signup{
+color:#588527;
+text-align:center;
+vertical-align:text-top;
+font-size:22px;
+font-family:Grandstander;
+width:101px;
+}
+
+@media (max-width: 400px) {
+    .login {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    flex-direction: column; /* Zmiana na układ kolumnowy */
+    align-items: center; /* Centrowanie elementów w pionie */
+    }
+    .form{
+        margin-right: 0px;
+        margin-top: 60px;
+    }
+    .images-container {
+        margin-right: 0px;
+        margin-top: 40px;
+        width: 280px;
+        height: 224px;
+        position: relative;
+    }
+    .group7 {
+        width: 100%;
+        margin-top: 70px;
+     }
+
+     #login-title{
+        position: absolute;
+        font-size: 40px;
+        margin-bottom: 100px;
+        top: 4%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+   }
