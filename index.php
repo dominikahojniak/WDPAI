@@ -1,25 +1,20 @@
 <?php
 
-require_once __DIR__."/src/controllers/DefaultController.php";
+require 'Routing.php';
 
-$path = $_SERVER["REQUEST_URI"];
-$path = trim($path, "/");
+$path = trim($_SERVER['REQUEST_URI'], '/');
+$path = parse_url( $path, PHP_URL_PATH);
 
-$actions = explode("/", $path);
-
-$routes = [
-    "login" => "DefaultController",
-    "dashboard" => "DefaultController"
-];
-
-
-if(!array_key_exists($actions[0], $routes)) {
-    die("404 not found");
-}
-
-
-$controller = new $routes[$actions[0]]();
-
-$action = $actions[0];
-$controller->$action();
-
+Router::get('', 'DefaultController');
+Router::get('signup', 'DefaultController');
+Router::get('login', 'DefaultController');
+Router::get('dashboard', 'DefaultController');
+Router::get('book', 'DefaultController');
+Router::get('home', 'DefaultController');
+Router::get('premieres', 'DefaultController');
+Router::get('profile', 'DefaultController');
+Router::get('search', 'DefaultController');
+Router::get('toRead', 'DefaultController');
+Router::get('FileNotFound', 'ErrorController');
+Router::post('login', 'SecurityController');
+Router::run($path);

@@ -20,6 +20,7 @@
     <main>
         <div class="sidebar">
             SIDEBAR
+<h1><? <title></title></h1>
         </div>
         <div class="elements">
             <h1>

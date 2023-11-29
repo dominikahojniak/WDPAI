@@ -18,11 +18,20 @@
         <div class="images-container">
             <img src="../../img/logo.svg">
         </div>
-        <form class="form">
+        <form class="form" action="login" method="POST">
             <h1 id="login-title">Log In</h1>
-            <input type="text" placeholder="email" id="email">
-            <input type="text" placeholder="password" id="password">
-            <button id="login-button"> LOG IN </button>
+            <div class="messages">
+                    <?php
+                        if(isset($messages)){
+                            foreach($messages as $message) {
+                                echo $message;
+                            }
+                        }
+                    ?>
+                </div>
+            <input name="email" type="text" placeholder="email" id="email">
+            <input name="password" type="password" placeholder="password" id="password">
+            <button type="submit" id="login-button"> LOG IN </button>
             <div id='group7' class='group7'>
                 <div id='donthaveanaccount' class='donthaveanaccount'>
                 Don t have an account?</div>
