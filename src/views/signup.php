@@ -15,19 +15,29 @@
 </head>
 <body>
     <div class="signup">
-            <a href="login.html" class='login'>
+            <a href="login" class='login'>
                 Login
             </a>
         <div class="signup-content">
             <div class="images-container">
                 <img src="../../img/logo.svg">
             </div>
-            <form class="form">
+            <form class="form" action="signup" method="POST">
                 <h1 id="signup-title">Sign Up</h1>
-                <input type="text" placeholder="name" id="name">
-                <input type="text" placeholder="email" id="email">
-                <input type="text" placeholder="password" id="password">
-                <button id="signup-button"> SIGN UP </button>
+                <div class="messages">
+                    <?php
+                    if(isset($messages)){
+                        foreach($messages as $message) {
+                            echo $message;
+                        }
+                    }
+                    ?>
+                </div>
+                <input name="name" type="text" placeholder="name" id="name">
+                <input name="email" type="text" placeholder="email" id="email">
+                <input name="phone" type="text" placeholder="phone" id="phone">
+                <input name="password" type="password" placeholder="password" id="password">
+                <button type="submit" id="signup-button"> SIGN UP </button>
             </form>
         </div>
     </div>

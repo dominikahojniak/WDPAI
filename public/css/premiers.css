@@ -29,7 +29,7 @@ nav a {
     font-size:20px;
     font-weight: 800;
 }
-nav li a[href="premieres.html"] {
+nav li a[href="premieres"] {
     color: #394130; /* Kolor, jaki chcesz ustawić */
 }
 nav li img {
@@ -137,7 +137,15 @@ footer li {
     font-size:20px;
     font-weight: 800;
 }
-@media (max-width: 400px) {
+footer ul li a {
+    text-decoration: none; /* Usuń podkreślenie */
+    color: #BFAEA0; /* Kolor linku */
+}
+
+footer ul li a:hover {
+    color: #394130; /* Kolor linku po najechaniu myszką */
+}
+@media (max-width: 900px) {
     nav{
         position: fixed;
         bottom: 0;

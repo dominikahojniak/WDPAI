@@ -20,13 +20,13 @@
             <img src="../../img/malelogo.svg">
         </div>
         <ul>
-            <li><a href="home.html"><img src="../../img/home.svg">Home</a></li>
-            <li><a href="premieres.html"><img src="../../img/clock.svg">Premieres</a></li>
-            <li><a href="toRead.html"><img src="../../img/heart-green.svg">ToRead</a></li>
-            <li><a href="search.html"><img src="../../img/search.svg">Search</a></li>
+            <li><a href="home"><img src="../../img/home.svg">Home</a></li>
+            <li><a href="premieres"><img src="../../img/clock.svg">Premieres</a></li>
+            <li><a href="toRead"><img src="../../img/heart-green.svg">ToRead</a></li>
+            <li><a href="search"><img src="../../img/search.svg">Search</a></li>
         </ul>
         <div class="images-container">
-            <img src="../../img/maleprofil.svg">
+            <a href="profile"><img src="../../img/maleprofil.svg"></a>
         </div>
     </nav>
     <main>
@@ -73,18 +73,18 @@
     </main>
     <footer>
         <ul>
-            <li>Help</li>
-            <li>About Us</li>
-            <li>Contact</li>
+            <li><a href="help">Help</a></li>
+            <li><a href="aboutUs">About Us</a></li>
+            <li><a href="contact">Contact</a></li>
         </ul>
         <div class="media">
-            <img src="../../img/linkedin.svg">
-            <img src="../../img/fb.svg">
-            <img src="../../img/ig.svg">
+            <a href="https://www.linkedin.com/notifications/?filter=all" target="_blank"><img src="../../img/linkedin.svg"></a>
+            <a href="https://www.facebook.com/?locale=pl_PL" target="_blank"><img src="../../img/fb.svg"></a>
+            <a href="https://www.instagram.com" target="_blank"><img src="../../img/ig.svg"></a>
         </div>
         <div class="store">
-            <img src="../../img/AppStore.svg">
-            <img src="../../img/GooglePlay.svg">
+            <a href="https://www.apple.com/pl/app-store/" target="_blank"><img src="../../img/AppStore.svg"></a>
+            <a href="https://play.google.com/store/apps" target="_blank"><img src="../../img/GooglePlay.svg"></a>
         </div>
     </footer>
 </body>

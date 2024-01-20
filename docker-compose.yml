@@ -47,6 +47,5 @@ services:
 
 networks:
   pg-network:
-
 volumes:
   pg-data:

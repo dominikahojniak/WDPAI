@@ -3,12 +3,14 @@
 
 class User{
     private $email;
-    private $hashedPassword;
+    private $password;
     private $name;
+    private $phone;
+
 
     public function __construct(string $email, string $password, string $name){
     $this->email = $email;
-    $this->hashedPassword = password_hash($password,PASSWORD_BCRYPT);
+    $this->password = $password;
     $this-> name = $name;
     }
     public function getEmail(): string 
@@ -16,16 +18,23 @@ class User{
         return $this->email;
     }
 
-    public function getPassword()
+    public function getPassword() : string
     {
-        return $this->hashedPassword;
+        return $this->password;
     }
 
     public function getName(): string
     {
         return $this->name;
     }
-
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+    public function setPhone($phone): void
+    {
+        $this->phone = $phone;
+    }
     public function setEmail(string $email): void
     {
         $this->email = $email;

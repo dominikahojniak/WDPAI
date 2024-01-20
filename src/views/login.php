@@ -35,8 +35,7 @@
             <div id='group7' class='group7'>
                 <div id='donthaveanaccount' class='donthaveanaccount'>
                 Don t have an account?</div>
-                <!-- Dodane hiperłącze -->
-                <a href="signup.html" class='signup'>
+                <a href="signup" class='signup'>
                     Sign Up
                 </a>
             </div>
