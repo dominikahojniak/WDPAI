@@ -34,13 +34,30 @@
             Add Book
         </div>
         <div class="news">
-            <form class="form" action="addBook" method="POST" ENCTYPE="multipart/form-data">
+            <form class="form" action="addBook" method="POST" enctype="multipart/form-data">
                 <input name="title" type="text" placeholder="title" id="email">
                 <input name="author" type="text" placeholder="author" id="email">
                 <input name="ISBN" type="text" placeholder="ISBN" id="email">
                 <input name="date" type="text" placeholder="date" id="email">
                 <input name="language" type="text" placeholder="language" id="email">
+                <input name="description" type="text" placeholder="description" id="email">
                 <input type="file" name="file"/>
+                <!-- Subscription Platforms: -->
+                <label for="platform-label">Subscription Platforms:</label>
+                <div class="platform-container" id="subscription-platforms">
+                <?php foreach ($subscriptionPlatforms as $platform): ?>
+                    <input type="checkbox" name="subscription_platforms[]" value="<?php echo $platform->getId(); ?>">
+                    <label for="subscription_platforms_<?php echo $platform->getId(); ?>"><?php echo $platform->getName(); ?></label>
+                <?php endforeach; ?>
+                </div>
+                <!-- Purchase Platforms: -->
+                <label for="platform-label">Buy Platforms:</label>
+                <div class="platform-container" id="purchase-platforms">
+                <?php foreach ($purchasePlatforms as $platform): ?>
+                    <input type="checkbox" name="purchase_platforms[]" value="<?php echo $platform->getId(); ?>">
+                    <label for="purchase_platforms_<?php echo $platform->getId(); ?>"><?php echo $platform->getName(); ?></label>
+                <?php endforeach; ?>
+                </div>
                 <button type="submit" id="add-button"> ADD BOOK </button>
             </form>
     </div>
@@ -61,6 +78,6 @@
             <a href="https://play.google.com/store/apps" target="_blank"><img src="../../img/GooglePlay.svg"></a>
         </div>
     </footer>
+    <script type="text/javascript" src="./public/js/addBookValidation.js" defer></script>
 </body>
-
 </html>

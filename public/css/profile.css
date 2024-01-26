@@ -41,7 +41,7 @@ nav li img {
 body{
     background-color: #1F1910;
     margin: 0;
-    width: 100vw;
+    width: calc(100vw - 2rem);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -120,6 +120,7 @@ footer ul {
     list-style-type: none;
     padding: 0;
     display: flex;
+    margin-left: 1%;
 }
 footer li {
     display: inline; /* Umieszczenie elementów listy obok siebie (poziomo) */
@@ -159,6 +160,12 @@ footer ul li a:hover {
     .images-container{
         display: none;
     }
+    body{
+        width: 99vw;
+    }
+    .main{
+        justify-content: start;
+    }
     main >.profile{
         width: 390px;
         height: 90px;
@@ -169,6 +176,10 @@ footer ul li a:hover {
         margin-top: 0px;
         display: flex;
         align-items: flex-end;
+    }
+    .news{
+        margin-left: 10%;
+        width: 80%;
     }
     .name , .email , .logout{
         width: 370px;

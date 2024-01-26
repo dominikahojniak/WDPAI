@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../public/css/signup.css ">
+    <script type="text/javascript" src="./public/js/signUpValidation.js" defer></script>
     <title>SIGN UP</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,6 +39,7 @@
                 <input name="phone" type="text" placeholder="phone" id="phone">
                 <input name="password" type="password" placeholder="password" id="password">
                 <button type="submit" id="signup-button"> SIGN UP </button>
+                <p>Your password must be at least 8 characters,<br> 1 number and 1 uppercase letter.</p>
             </form>
         </div>
     </div>

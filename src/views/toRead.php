@@ -34,41 +34,20 @@
             To Read
         </div>
         <div class="news">
-            <div class="news-container"> <img class="news-image" src="../../img/book_toRead.svg"
-                    alt="News Image 1">
+            <?php foreach ($toReadBooks as $book): ?>
+            <div class="news-container"> <img class="news-image" src="public/uploads/<?= $book->getImage(); ?>" alt="News Image 1">
                 <div class="news-description">
-                    <h3>The Title</h3>
-                    <p>by Author</p>
+                    <h3><?= $book-> getTitle();?></h3>
+                    <p>by <?= $book-> getAuthor();?></p>
+                    <a href="/book?id=<?= $book->getId(); ?>">View Details</a>
                 </div>
-            </div> 
-            <div class="news-container"> <img class="news-image" src="../../img/book_toRead.svg"
-                alt="News Image 1">
-                <div class="news-description">
-                    <h3>The Title</h3>
-                    <p>by Author</p>
-                </div>
-            </div> 
-            <div class="news-container"> <img class="news-image" src="../../img/book_toRead.svg"
-                alt="News Image 1">
-            <div class="news-description">
-                <h3>The Title</h3>
-                <p>by Author</p>
+                <form class="form" action="/removeBookFromList" method="POST">
+                    <input type="hidden" name="book_id" value="<?= $book->getId(); ?>">
+                    <button type="submit" id="remove-button" name="remove_button">- Remove</button>
+                </form>
             </div>
-        </div> 
-        <div class="news-container"> <img class="news-image" src="../../img/book_toRead.svg"
-            alt="News Image 1">
-        <div class="news-description">
-            <h3>The Title</h3>
-            <p>by Author</p>
+            <?php endforeach; ?>
         </div>
-    </div> 
-    <div class="news-container"> <img class="news-image" src="../../img/book_toRead.svg"
-        alt="News Image 1">
-    <div class="news-description">
-        <h3>The Title</h3>
-        <p>by Author</p>
-    </div>
-</div> 
         </div>
     </main>
     <footer>

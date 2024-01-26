@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../public/css/search.css ">
+    <script type="text/javascript" src="./public/js/searching.js" defer></script>
+    <script type="text/javascript" src="./public/js/bookDetails.js" defer></script>
     <title>SEARCH</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,23 +35,12 @@
         <div class="search">
             Search
         </div>
-        <div class="news">
         <form class="form">
             <input type="text" placeholder="Search for title or author..." id="searching">
         </form>
-        <div class="recently">Recently searched:</div>
-        <div class="title">Title</div>
-        <div class="title">Title</div>
-        <div class="title">Title</div>
-        <div class="title">Title</div>
-        <div class="title">Title</div>
-        <div class="title">Title</div>
-        <div class="title">Title</div>
-        <div class="title">Title</div>
-        <div class="title">Title</div>
-        <div class="title">Title</div>
-        <div class="title">Title</div>
-    </div>
+        <div class="books" >
+
+        </div>
     </main>
     <footer>
         <ul>
@@ -68,5 +59,15 @@
         </div>
     </footer>
 </body>
-
+<template id="book-template">
+    <a href="#" class="book-link">
+    <div class="news-container"> <img class="news-image" src=""
+                                      alt="News Image 1">
+        <div class="news-description">
+            <h3>The Title</h3>
+            <p>by Author</p>
+        </div>
+    </div>
+    </a>
+</template>
 </html>

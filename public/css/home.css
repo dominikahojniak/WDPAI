@@ -1,3 +1,15 @@
+body::-webkit-scrollbar {
+    background-color: #1F1910;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #0F0C08;
+}
+.news::-webkit-scrollbar {
+    background-color: #1F1910;
+}
+.news::-webkit-scrollbar-thumb {
+    background-color: #0F0C08;
+}
 nav{
     background-color: #1F1910;
     width: calc(100vw - 2rem);
@@ -38,27 +50,39 @@ nav li img {
     margin-right: 5px; /* Odstęp między obrazem a tekstem linku */
     vertical-align: bottom;
 }
+nav li.addBook {
+    display: flex;
+    align-items: center;
+    margin-right: 2vw;
+}
+.images-container {
+    display: flex; /* Ustawienie kontenera na flexbox */
+    align-items: center; /* Wyśrodkowanie w pionie */
+}
+nav li.addBook a {
+    color: #FF0000; /* Kolor czerwony */
+}
 body{
     background-color: #1F1910;
     margin: 0;
-    width: 100vw;
+    width: calc(100vw - 2rem);
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     overflow-y: auto;
     flex-direction: column;
 }
 main{
-    flex: 1;
     display: flex;
       flex-direction: column; /* Ustawia układ flexboxa na kolumnowy, aby elementy były pod sobą */
       align-items: center; /* Wyśrodkuj elementy na osi poziomej */
-      justify-content: center; /* Wyśrodkuj elementy na osi pionowej */
+      justify-content: start; /* Wyśrodkuj elementy na osi pionowej */
       margin-bottom: 0px;
-      margin-top: 80px;
+    margin-top: 90px;
+    flex-shrink: 0; /* Zapobiegnij zmniejszaniu rozmiaru */
     }
-main >.trending{
+main >.catalog{
     background-color: #1F1910;
     width: calc(100vw - 30rem);
     font-size: 40px;
@@ -69,22 +93,41 @@ main >.trending{
     justify-content: center;
     box-shadow: 0 2px 1px #13100A; /* Dodaj cień */
     margin-bottom: 10px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 .main-image2{
 display: none;
 }
+.main-image{
+    height: 40%;
+}
 .news{
     width: calc(100vw - 30rem);
-    height: auto;
+    height: 33vh;
     display: flex;
     gap: 1rem;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
+    overflow-x: auto; /* Dodaj przewijanie poziome */
+    white-space: nowrap; /* Zablokuj zawijanie tekstu, aby umożliwić przewijanie poziome */
+    margin-left: 1%;
+}
+.news-container {
+    width: 120px; /* Dostosuj szerokość według potrzeb */
+    height: 150px; /* Ustawienie wysokości proporcjonalnie do szerokości */
+}
+.news-image {
+    width: 120px; /* Dostosuj szerokość według potrzeb */
+    height: 160px; /* Ustawienie wysokości proporcjonalnie do szerokości */
 }
 .news-description {
     margin-left: 0px;
-    align-items: center; 
+    align-items: center;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+.news a {
+    text-decoration: none;
 }
 .news-description h3 {
     margin-top: 5px;
@@ -92,7 +135,12 @@ display: none;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
     font-weight: 800;
-    align-items: center; 
+    align-items: center;
+    text-decoration: none;
+    overflow-wrap: break-word;
+    white-space: nowrap; /* Dodane, aby tekst nie łamał się na nowe linie */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Dodane, aby ukryć nadmiarowy tekst i dodać trzy kropki */
 }
 footer {
     background-color: #0F0C08;
@@ -110,6 +158,7 @@ footer ul {
     list-style-type: none;
     padding: 0;
     display: flex;
+    margin-left: 1%;
 }
 footer li {
     display: inline; /* Umieszczenie elementów listy obok siebie (poziomo) */
@@ -144,6 +193,11 @@ footer ul li a:hover {
         bottom: 0;
         top: auto; 
         box-shadow: 0 -2px 1px #13100A; /* Dodaj cień */
+        padding: 0;
+        width: calc(100vw - 1px);
+    }
+    body{
+        width: calc(100vw - 1px);
     }
     nav li {
         align-items: center;
@@ -154,6 +208,10 @@ footer ul li a:hover {
         font-size:14px;
         font-weight: 700;
         display: block;
+    }
+    .news{
+        width: calc(100vw - 1px);
+        height: 14rem;
     }
     li a {
         margin-left: 10px;
@@ -169,9 +227,9 @@ footer ul li a:hover {
         }
     main{
         margin-bottom: auto;
-        margin-top: 0px;
+        width: calc(100vw - 1px);
     }
-    main >.trending{
+    main >.catalog{
         width: 390px;
         height: 70px;
         font-size: 40px;
@@ -186,6 +244,7 @@ footer ul li a:hover {
         background-color: #1F1910;
         opacity: 1.0;
         box-shadow: 0 2px 1px #13100A; /* Dodaj cień */
+        width: calc(100vw - 2rem);
     }
     footer ul li {
         display: none;

@@ -34,11 +34,17 @@ class SecurityController extends AppController {
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
         $_SESSION['user'] = [
+            'id' => $user->getId(),
             'email' => $user->getEmail(),
-            'name' => $user->getName()
+            'name' => $user->getName(),
+            'role' => $user->getRole()
         ];
         $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/home");
+        if ($_SESSION['user']['role'] === 'admin') {
+            header("Location: {$url}/addBook");
+        } else {
+            header("Location: {$url}/home");
+        }
     }
     public function signup()
     {
@@ -59,7 +65,6 @@ class SecurityController extends AppController {
         $user = new User($email, $hashedPassword, $name);
         $user->setPhone($phone);
         $this->userRepository->addUser($user);
-
         return $this->render('login', ['messages' => ['You\'ve been succesfully registrated!']]);
     }
     public function logout() {

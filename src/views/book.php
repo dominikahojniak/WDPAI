@@ -26,96 +26,79 @@
             <li><a href="search"><img src="../../img/search.svg">Search</a></li>
         </ul>
         <div class="images-container">
-            <img src="../../img/maleprofil.svg">
+            <a href="profile"><img src="../../img/maleprofil.svg"></a>
         </div>
     </nav>
     <main>
         <div class="left">
             <div class="x">
-                <img src="../../img/x.svg">
+                <a href="home"><img src="../../img/x.svg"></a>
             </div>
         </div>
         <div class="middle">
             <div class="image">
-                <img src="../../img/book_book.svg">
+                <img class="news-image" src="public/uploads/<?= $book->getImage(); ?>" alt="News Image 1">
             </div>
-            <form class="form">
+            <form class="form" action="/addBookToList" method="POST">
+                <input type="hidden" name="book_id" value="<?= $book->getId() ?>">
                 <button id="add-button"> + To Read </button>
             </form>
+            <?php
+            if (isset($_GET['success']) && $_GET['success'] === 'true') {
+                echo '<p style="color: green;">Book added to ToRead list successfully!</p>';
+            } elseif (isset($_GET['error']) && $_GET['error'] === 'exists') {
+                echo '<p style="color: red;">Book is already in ToRead list!</p>';
+            }
+            ?>
         </div>
         <div class="right">
             <div class="news-description">
-                <h3>Title </h3>
-                <p>by Author</p>
+                <h3><?= $book->getTitle(); ?> </h3>
+                <p>by <?= $book->getAuthor(); ?></p>
+                <p>date: <?= $book->getDate(); ?></p>
             </div>
             <div class="subscription">
-                <div class="news-title">
-                    <h3>Subscription </h3>
-                </div>
-                <div class="items">
-                    <img src="../../img/legimi.svg">
-                    <div class="options">
-                        <img src="../../img/ebook.svg">
-                        <img src="../../img/headphones.svg">
+                <div class="news-title-container">
+                    <div class="news-title">
+                        <h3>Subscription </h3>
                     </div>
                 </div>
                 <div class="items">
-                    <img src="../../img/Bookbeat.svg">
-                    <div class="options">
-                        <img src="../../img/ebook.svg">
-                        <img src="../../img/headphones.svg">
-                    </div>
-                </div>
-                <div class="items">
-                    <img src="../../img/empikGo.svg">
-                    <div class="options">
-                        <img src="../../img/ebook.svg">
-                        <img src="../../img/headphones.svg">
-                    </div>
-                </div>
-                <div class="items">
-                    <img src="../../img/storytel.svg">
-                    <div class="options">
-                        <img src="../../img/ebook.svg">
-                        <img src="../../img/headphones.svg">
-                    </div>
+                        <?php foreach ($subscriptionPlatforms as $platform): ?>
+                            <?php if (is_object($platform) && $platform instanceof Platform): ?>
+                            <div class="platform-item">
+                                <img src="public/platforms/<?= $platform->getImage(); ?>"class="platform-image">
+                                <div class="options">
+                                    <img src="../../img/ebook.svg">
+                                    <img src="../../img/headphones.svg">
+                                </div>
+                            </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
                 </div>
             </div>
             <div class="buy">
-                <div class="news-title">
-                    <h3>Buy </h3>
-                </div>
-                <div class="items">
-                    <img src="../../img/legimi.svg">
-                    <div class="options">
-                        <img src="../../img/ebook.svg">
-                        <img src="../../img/headphones.svg">
+                <div class="news-title-container">
+                    <div class="news-title">
+                        <h3>Buy </h3>
                     </div>
                 </div>
                 <div class="items">
-                    <img src="../../img/Bookbeat.svg">
-                    <div class="options">
-                        <img src="../../img/ebook.svg">
-                        <img src="../../img/headphones.svg">
-                    </div>
-                </div>
-                <div class="items">
-                    <img src="../../img/empikGo.svg">
-                    <div class="options">
-                        <img src="../../img/ebook.svg">
-                        <img src="../../img/headphones.svg">
-                    </div>
-                </div>
-                <div class="items">
-                    <img src="../../img/storytel.svg">
-                    <div class="options">
-                        <img src="../../img/ebook.svg">
-                        <img src="../../img/headphones.svg">
-                    </div>
+                    <?php foreach ($purchasePlatforms as $platform): ?>
+                        <?php if (is_object($platform) && $platform instanceof Platform): ?>
+                            <div class="platform-item">
+                                <img src="public/platforms/<?= $platform->getImage(); ?>"class="platform-image">
+                                <div class="options">
+                                    <img src="../../img/ebook.svg">
+                                    <img src="../../img/headphones.svg">
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                 </div>
             </div>
             <div class="news-description">
-                <p>Provide a concise and engaging description of what the book is about. Highlight the main plot, themes, and key elements of the story. This should be a paragraph or two that gives readers a good sense of the book's content.</p>
+                <p><?= $book->getDescription(); ?></p>
             </div>
         </div>
     </main>

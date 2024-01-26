@@ -6,13 +6,29 @@ class User{
     private $password;
     private $name;
     private $phone;
+    private $role;
+    private $id;
 
-
-    public function __construct(string $email, string $password, string $name){
+    public function __construct(string $email, string $password, string $name, $role = 'user'){
     $this->email = $email;
     $this->password = $password;
     $this-> name = $name;
+    $this->role = $role;
+
     }
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
     public function getEmail(): string 
     {
         return $this->email;
@@ -31,6 +47,9 @@ class User{
     {
         return $this->phone;
     }
+    public function getRole() {
+        return $this->role;
+    }
     public function setPhone($phone): void
     {
         $this->phone = $phone;
@@ -46,6 +65,10 @@ class User{
     public function setName(string $name): void
     {
         $this->name = $name;
+    }
+    public function setRole($role): void
+    {
+        $this->role = $role;
     }
 
 }

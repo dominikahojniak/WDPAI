@@ -9,16 +9,21 @@ class Book {
     private $date;
     private $language;
     private $image;
+    private $description;
     private $id;
+    private $subscriptionPlatforms = [];
+    private $purchasePlatforms = [];
+
 
     // Constructor
-    public function __construct($title, $author, $isbn, $date, $language,$image, $id = null) {
+    public function __construct($title, $author, $isbn, $date, $language,$image,$description, $id = null) {
         $this->title = $title;
         $this->author = $author;
         $this->isbn = $isbn;
         $this->date = $date;
         $this->language = $language;
         $this->image = $image;
+        $this->description = $description;
         $this->id = $id;
     }
 
@@ -50,7 +55,13 @@ class Book {
     {
         return $this->image;
     }
+    public function getDescription() {
+        return $this->description;
+    }
 
+    public function setDescription($description) {
+        $this->description = $description;
+    }
     public function setImage($image)
     {
         $this->image = $image;
@@ -67,10 +78,6 @@ class Book {
         $this->isbn = $isbn;
     }
 
-    public function setYear($year) {
-        $this->year = $year;
-    }
-
     public function setLanguage($language) {
         $this->language = $language;
     }
@@ -78,4 +85,21 @@ class Book {
     {
         $this->id = $id;
     }
+    public function setSubscriptionPlatforms(array $subscriptionPlatforms) {
+        $this->subscriptionPlatforms = $subscriptionPlatforms;
+    }
+
+    public function setPurchasePlatforms(array $purchasePlatforms) {
+        $this->purchasePlatforms = $purchasePlatforms;
+    }
+
+    // Getter methods
+    public function getSubscriptionPlatforms() {
+        return $this->subscriptionPlatforms;
+    }
+
+    public function getPurchasePlatforms() {
+        return $this->purchasePlatforms;
+    }
+
 }

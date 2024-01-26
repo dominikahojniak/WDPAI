@@ -1,3 +1,9 @@
+body::-webkit-scrollbar {
+    background-color: #1F1910;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #0F0C08;
+}
 nav{
     background-color: #1F1910;
     width: calc(100vw - 2rem);
@@ -39,10 +45,10 @@ nav li img {
 body{
     background-color: #1F1910;
     margin: 0;
-    width: 100vw;
+    width: calc(100vw - 2rem);
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     overflow-y: auto;
     flex-direction: column;
@@ -54,7 +60,8 @@ main{
     align-items: center; /* Wyśrodkuj elementy na osi poziomej */
     justify-content: center; /* Wyśrodkuj elementy na osi pionowej */
     margin-bottom: 0px;
-    margin-top: 11%;
+    margin-top: 90px;
+    flex-shrink: 0; /* Zapobiegnij zmniejszaniu rozmiaru */
 }
 main >.add{
     background-color: #1F1910;
@@ -111,8 +118,26 @@ main >.add{
     border-radius: 7px;
     margin-top: 50px;
 }
+form label {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #BFAEA0;
+}
 
-
+form input[type="checkbox"] {
+    margin-right: 5px;
+}
+.platform-container {
+    display: flex;
+    flex-wrap: wrap; /* Umożliwia zawijanie na nowe wiersze, jeśli nie mieści się na szerokość */
+    align-items: center; /* Wyśrodkuj elementy w pionie */
+}
+label[for="platform-label"] {
+    font-size: 30px; /* Tutaj ustaw rozmiar czcionki, jaki chcesz */
+    box-shadow: 0 2px 1px #13100A; /* Dodaj cień */
+}
 footer {
     background-color: #0F0C08;
     opacity: 0.65;
@@ -129,6 +154,7 @@ footer ul {
     list-style-type: none;
     padding: 0;
     display: flex;
+    margin-left: 1%;
 }
 footer li {
     display: inline; /* Umieszczenie elementów listy obok siebie (poziomo) */
@@ -145,12 +171,19 @@ footer ul li a {
 footer ul li a:hover {
     color: #394130; /* Kolor linku po najechaniu myszką */
 }
+.no-valid {
+    border: 3px solid red;
+    border-radius: 1em;
+    box-shadow: 0 0 0.2em red;
+    outline: none;
+}
 @media (max-width: 900px) {
     nav{
         position: fixed;
         bottom: 0;
         top: auto;
         box-shadow: 0 -2px 1px #13100A; /* Dodaj cień */
+        width: 100vw;
     }
     nav li {
         align-items: center;
@@ -170,7 +203,19 @@ footer ul li a:hover {
     }
     main{
         margin-bottom: auto;
-        margin-top: auto;
+        margin-top: 120px;
+    }
+    .news{
+        height: calc(100vh - 30rem);
+        margin-right: 0px;
+    }
+    .form{
+        margin-right: 0px;
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
     main >.add{
         width: 390px;

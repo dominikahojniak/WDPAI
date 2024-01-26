@@ -1,3 +1,9 @@
+body::-webkit-scrollbar {
+    background-color: #1F1910;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #0F0C08;
+}
 nav{
     background-color: #1F1910;
     width: calc(100vw - 2rem);
@@ -41,10 +47,10 @@ nav li img {
 body{
     background-color: #1F1910;
     margin: 0;
-    width: 100vw;
+    width: calc(100vw - 2rem);
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     overflow-y: auto;
     flex-direction: column;
@@ -54,9 +60,9 @@ flex: 1;
 display: flex;
   flex-direction: column; /* Ustawia układ flexboxa na kolumnowy, aby elementy były pod sobą */
   align-items: center; /* Wyśrodkuj elementy na osi poziomej */
-  justify-content: center; /* Wyśrodkuj elementy na osi pionowej */
-  margin-bottom: 0px;
-  margin-top: 430px;
+  justify-content: start; /* Wyśrodkuj elementy na osi pionowej */
+  margin-top: 90px;
+    flex-shrink: 0; /* Zapobiegnij zmniejszaniu rozmiaru */
 }
 main >.toRead{
     background-color: #1F1910;
@@ -69,7 +75,7 @@ main >.toRead{
     justify-content: center;
     box-shadow: 0 2px 1px #13100A; /* Dodaj cień */
     margin-bottom: 10px;
-    margin-top: 0px;
+    margin-top: 10px;
 }
 .news-container > img{
     width: 143px;
@@ -88,9 +94,11 @@ main >.toRead{
     display: flex;
     align-items: flex-start;
     box-shadow: 0 2px 1px #13100A; /* Dodaj cień */
+    justify-content: space-between;
 }
 .news-description {
     margin-left: 10px;
+    flex-grow: 1;
 }
 .news-description h3 {
     margin-top: 0;
@@ -100,14 +108,33 @@ main >.toRead{
     font-family: 'Roboto', sans-serif;
     font-weight: 800;
 }
-.news-description p {
-    margin-top: 0; 
+.news-description p, a {
+    margin-top: 0;
     color: #BFAEA0;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
 }
+.news-description a {
+    text-decoration: none;
+    border-bottom: 2px solid #BFAEA0; /* Tutaj możesz dostosować grubość, kolor, itp. */
+    padding-bottom: 1px; /* Dodatkowy odstęp pomiędzy tekstem a podkreśleniem */
+}
 
+.form{
+    display: flex;
+    align-items: center;
+}
+#remove-button{
+    color: #BFAEA0;
+    background-color: #4f2525;
+    font-family: 'Roboto', sans-serif;
+    font-size:20px;
+    width: 189px;
+    height: 67px;
+    border-radius: 7px;
+    margin-top: 0px;
+}
 footer {
     background-color: #0F0C08;
     opacity: 0.65;
@@ -124,6 +151,7 @@ footer ul {
     list-style-type: none;
     padding: 0;
     display: flex;
+    margin-left: 1%;
 }
 footer li {
     display: inline; /* Umieszczenie elementów listy obok siebie (poziomo) */
@@ -164,7 +192,9 @@ footer ul li a:hover {
         margin-bottom: auto;
         margin-top: 120px;
     }
-    
+    body{
+        width: 100vw;
+    }
     main >.toRead{
         width: 390px;
         height: 90px;
@@ -184,13 +214,23 @@ footer ul li a:hover {
     .news{
         width: 390px;
         min-height: calc(100% + 1px);
-        margin-top: 100px;
+        margin-bottom: 90px;
+        flex-shrink: 0; /* Zapobiegnij zmniejszaniu rozmiaru */
     }
     .news-description h3 {
         font-size: 20px;
     }
     .news-description p {
         font-size: 12px;
+    }
+    .form{
+        margin-right: 1%;
+    }
+    #remove-button{
+        width: 130px;
+        height: 50px;
+        border-radius: 7px;
+        margin-top: 0px;
     }
     .images-container{
         display: none;

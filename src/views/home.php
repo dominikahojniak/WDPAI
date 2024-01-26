@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../public/css/home.css ">
+    <script type="text/javascript" src="./public/js/bookDetails.js" defer></script>
     <title>HOME</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,6 +27,9 @@
             <li><a href="search"><img src="../../img/search.svg">Search</a></li>
         </ul>
         <div class="images-container">
+            <?php if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin') : ?>
+                <li class="addBook"><a href="addBook">Add Book</a></li>
+            <?php endif; ?>
             <a href="profile"><img src="../../img/maleprofil.svg"></a>
         </div>
     </nav>
@@ -34,22 +38,20 @@
             alt="News Image 1">
         <img class="main-image2" src="../../img/home-main-mobile.svg"
             alt="News Image 2">
-        <div class="trending">
-            Trending
+        <div class="catalog">
+            Catalog
         </div>
         <div class="news">
-            <div class="news-container"> <img class="news-image" src="../../img/book_toRead.svg"
-                    alt="News Image 1">
+            <?php foreach($books as $book): ?>
+            <div class="news-container" data-book-id="<?= $book->getId(); ?>">
+                <a href="book?id=<?= $book->getId(); ?>">
+                    <img class="news-image" src="public/uploads/<?= $book->getImage(); ?>" alt="News Image 1">
                 <div class="news-description">
-                    <h3>The Title</h3>
+                    <h3><?= $book-> getTitle();?></h3>
                 </div>
-            </div> 
-            <div class="news-container"> <img class="news-image" src="../../img/book_toRead.svg"
-                alt="News Image 1">
-                <div class="news-description">
-                    <h3>The Title</h3>
-                </div>
+                </a>
             </div>
+            <?php endforeach; ?>
         </div> 
     </main>
     <footer>

@@ -33,35 +33,18 @@
         <div class="premieres">
             Premieres
         </div>
-        <div class="news"> 
+        <div class="news">
+            <?php foreach($premieres as $premiere): ?>
             <div class="news-container">
-                <div class="date"> <h3>03 NOV.</h3> </div>
+                <div class="date"> <h3><?= date('d M Y', strtotime($premiere->getDate()));?></h3> </div>
+                <div class="right">
                 <div class="news-description">
-                    <p>The Title by Author</p>
+                    <p><?= $premiere-> getTitle();?> <br>by <?= $premiere-> getAuthor();?></p>
                 </div>
-                <img class="news-image" src="../../img/book_premieres.svg" alt="News Image 1">
-            </div>
-            <div class="news-container">
-                <div class="date"> <h3>03 NOV.</h3> </div>
-                <div class="news-description">
-                    <p>The Title by Author</p>
+                <img class="news-image" src="public/uploads/<?= $premiere->getImage(); ?>" alt="News Image 1">
                 </div>
-                <img class="news-image" src="../../img/book_premieres.svg" alt="News Image 1">
             </div>
-            <div class="news-container">
-                <div class="date"> <h3>03 NOV.</h3> </div>
-                <div class="news-description">
-                    <p>The Title by Author</p>
-                </div>
-                <img class="news-image" src="../../img/book_premieres.svg" alt="News Image 1">
-            </div>
-            <div class="news-container">
-                <div class="date"> <h3>03 NOV.</h3> </div>
-                <div class="news-description">
-                    <p>The Title by Author</p>
-                </div>
-                <img class="news-image" src="../../img/book_premieres.svg" alt="News Image 1">
-            </div>
+            <?php endforeach; ?>
         </div>
     </main>
     <footer>

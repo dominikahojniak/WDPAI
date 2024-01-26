@@ -1,3 +1,25 @@
+body::-webkit-scrollbar {
+    background-color: #1F1910;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #0F0C08;
+}
+.buy::-webkit-scrollbar {
+    background-color: #1F1910;
+    height: 10px;
+}
+.buy::-webkit-scrollbar-thumb {
+    background-color: #0F0C08;
+    height: 10px;
+}
+.subscription::-webkit-scrollbar {
+    background-color: #1F1910;
+    height: 10px;
+}
+.subscription::-webkit-scrollbar-thumb {
+    background-color: #0F0C08;
+    height: 10px;
+}
 nav{
     background-color: #1F1910;
     width: calc(100vw - 2rem);
@@ -41,10 +63,10 @@ nav li img {
 body{
     background-color: #1F1910;
     margin: 0;
-    width: 100vw;
+    width: calc(100vw - 2rem);
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     overflow-y: auto;
     flex-direction: column;
@@ -52,13 +74,17 @@ body{
 main{
     flex: 1;
     display: flex;
+    height: 100vh;
   flex-direction: row; /* Ustawia układ flexboxa na kolumnowy, aby elementy były pod sobą */
   margin-bottom: 0px;
-  margin-top: 100px;
+    align-items: center; /* Wyśrodkuj elementy na osi poziomej */
+    justify-content: start; /* Wyśrodkuj elementy na osi pionowej */
+    margin-top: 90px;
+    flex-shrink: 0; /* Zapobiegnij zmniejszaniu rozmiaru */
 }
 main >.left{
     width: calc(100vw / 6);
-    height: calc(100vh - 200px);
+    height: calc(100vh - 90px);
     display: flex;
     justify-content: center;
     }
@@ -67,7 +93,7 @@ main >.left{
 }
 main > .middle{
     width: calc(100vw / 4);
-    height: calc(100vh - 200px);
+    height: calc(100vh - 90px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,15 +121,22 @@ main > .middle{
 }
 main >.right{
     width: calc(7 * 100vw / 12);
-    height: calc(100vh - 200px);
+    height: calc(100vh - 90px);
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
+    margin-bottom: 90px;
+    flex-shrink: 0; /* Zapobiegnij zmniejszaniu rozmiaru */
+}
+.news-image {
+    width: 15rem; /* Dostosuj szerokość według potrzeb */
+    height: 20rem; /* Ustawienie wysokości proporcjonalnie do szerokości */
 }
 .news-description {
     margin-left: 0px;
     margin-right: 0px;
-    width: 512px;
+    width: 95%;
+    height: 80%;
 }
 .news-description h3 {
     margin-top: 0;
@@ -116,39 +149,61 @@ main >.right{
 .news-description p {
     margin-top: 5px; 
     color: #BFAEA0;
-    font-size: 20px;
+    font-size: 18px;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
     margin-left: 5px;
 }
 .subscription{
     width: 512px;
-    height: 112px;
+    height: 120px;
     display: flex;
     flex-direction: row;
     gap: 2rem;
     margin-bottom: 10px;
     box-shadow: 0 2px 1px #13100A; /* Dodaj cień */
+    overflow-x: auto; /* Dodaj przewijanie poziome */
+    align-items: flex-end;
+    flex-shrink: 0; /* Zapobiegnij zmniejszaniu rozmiaru */
 }
 .items{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: start;
+}
+.options{
+    display: flex;
+    flex-direction: row;
+}
+.platform-item {
+    margin-right: 10px; /* Dodaj odstęp między elementami w items */
+}
+.items .platform-image {
+    width: 65px; /* Dostosuj szerokość według potrzeb */
+    height: 65px; /* Dostosuj wysokość według potrzeb */
+    margin-bottom: 10px;
 }
 .buy{
     width: 512px;
-    height: 112px;
+    height: 120px;
     display: flex;
     flex-direction: row;
     gap: 2rem;
     margin-bottom: 10px;
     box-shadow: 0 2px 1px #13100A; /* Dodaj cień */
+    align-items: flex-end;
+    overflow-x: auto; /* Dodaj przewijanie poziome */
+    flex-shrink: 0; /* Zapobiegnij zmniejszaniu rozmiaru */
 }
 .news-title{
     margin-left: 5px;
     display: flex;
     align-self: end;
-    width: 100px;
+    width: 140px;
+}
+.news-title-container {
+    width: 140px; /* Ustaw szerokość kontenera dla .news-title */
+    align-items: flex-end;
 }
 .news-title h3 {
     margin-top: 0;
@@ -163,7 +218,7 @@ footer {
     opacity: 0.65;
     color: #BFAEA0;
     width: calc(100vw - 2rem);
-    height: 90px;
+    min-height: 90px;
     font-size: 1.5rem;
     display: flex;
     justify-content: space-between;
@@ -174,6 +229,7 @@ footer ul {
     list-style-type: none;
     padding: 0;
     display: flex;
+    margin-left: 1%;
 }
 footer li {
     display: inline; /* Umieszczenie elementów listy obok siebie (poziomo) */
@@ -196,6 +252,10 @@ footer ul li a:hover {
         bottom: 0;
         top: auto; 
         box-shadow: 0 -2px 1px #13100A; /* Dodaj cień */
+        width: calc(100vw - 1px);
+    }
+    body{
+        width: calc(100vw - 1px);
     }
     nav li {
         align-items: center;
@@ -219,6 +279,7 @@ footer ul li a:hover {
         flex-direction: column;
         min-height: calc(100% + 1px);
         margin-top: auto;
+        flex-shrink: 0; /* Zapobiegnij zmniejszaniu rozmiaru */
     }
     main >.left{
         width: 390px;
@@ -239,9 +300,12 @@ footer ul li a:hover {
     }
     main >.right{
         width: 390px;
-        min-height: 600px;
+        min-height: 50%;
+        height: 90%;
         display: flex;
         justify-content: start;
+        margin-bottom: 90px;
+        flex-shrink: 0; /* Zapobiegnij zmniejszaniu rozmiaru */
     }
     .news-description {
         margin-right: 0px;
@@ -254,6 +318,7 @@ footer ul li a:hover {
     .news-description p{
         display: flex;
         justify-content: center;
+        font-size:14px;
     }
     .buy{
         width: 390px;

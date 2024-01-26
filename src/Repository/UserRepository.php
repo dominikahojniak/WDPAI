@@ -9,8 +9,10 @@ class UserRepository extends Repository
     public function getUser(string $email): ?User
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM users u LEFT JOIN users_details ud 
-            ON u.id_user_details = ud.id WHERE email = :email
+           SELECT u.id, u.email, u.password, u.name, u.role 
+    FROM users u 
+    LEFT JOIN users_details ud ON u.id_user_details = ud.id 
+    WHERE email = :email
         ');
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
@@ -20,12 +22,19 @@ class UserRepository extends Repository
         if ($user == false) {
             return null;
         }
-
-        return new User(
+        $userObject = new User(
             $user['email'],
             $user['password'],
-            $user['name']
+            $user['name'],
+            $user['role']
         );
+
+        // Ustaw identyfikator użytkownika, jeśli jest dostępny
+        if (isset($user['id'])) {
+            $userObject->setId((int)$user['id']);
+        }
+
+        return $userObject;
     }
     public function addUser(User $user)
     {
@@ -39,15 +48,16 @@ class UserRepository extends Repository
         ]);
 
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO public.users (email, password, name, id_user_details)
-            VALUES (?, ?, ?, ?)
+            INSERT INTO public.users (email, password, name, id_user_details,role)
+            VALUES (?, ?, ?, ?,?)
         ');
 
         $stmt->execute([
             $user->getEmail(),
             $user->getPassword(),
             $user->getName(),
-            $this->getUserDetailsId($user)
+            $this->getUserDetailsId($user),
+            $user->getRole()
         ]);
 
     }

@@ -1,3 +1,9 @@
+body::-webkit-scrollbar {
+    background-color: #1F1910;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #0F0C08;
+}
 nav{
     background-color: #1F1910;
     width: calc(100vw - 2rem);
@@ -41,10 +47,10 @@ nav li img {
 body{
     background-color: #1F1910;
     margin: 0;
-    width: 100vw;
+    width: calc(100vw - 2rem);
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     overflow-y: auto;
     flex-direction: column;
@@ -54,9 +60,10 @@ main{
     display: flex;
   flex-direction: column; /* Ustawia układ flexboxa na kolumnowy, aby elementy były pod sobą */
   align-items: center; /* Wyśrodkuj elementy na osi poziomej */
-  justify-content: center; /* Wyśrodkuj elementy na osi pionowej */
+  justify-content: start; /* Wyśrodkuj elementy na osi pionowej */
   margin-bottom: 0px;
-  margin-top: 250px;
+    margin-top: 90px;
+    flex-shrink: 0; /* Zapobiegnij zmniejszaniu rozmiaru */
 }
 main >.premieres{
     background-color: #1F1910;
@@ -88,6 +95,20 @@ main >.premieres{
 }
 .news-container > img{
     margin-bottom: 10px;
+    width: 150px;
+    height: 200px;
+}
+.right{
+    width: calc(100vw - 40rem);
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-right: 1%;
+}
+.right > img{
+    margin-bottom: 10px;
+    width: 150px;
+    height: 200px;
 }
 .date {
     margin-top: 0; 
@@ -95,13 +116,17 @@ main >.premieres{
     font-size: 40px;
     font-family:Grandstander;
     font-weight: 600;
+    height: auto;
+    width: 10rem;
 }
 .news-description  {
-    margin-left: calc(100vw - 30rem - 133px - 350px);
+    margin-left: 20rem;
     height: 176px;
     display: flex;
     align-items: flex-end;
-
+    width: auto;
+    justify-content: flex-end;
+    margin-right: 1%;
 }
 .news-description p {
     margin-top: 0; 
@@ -129,6 +154,7 @@ footer ul {
     list-style-type: none;
     padding: 0;
     display: flex;
+    margin-left: 1%;
 }
 footer li {
     display: inline; /* Umieszczenie elementów listy obok siebie (poziomo) */
@@ -151,6 +177,7 @@ footer ul li a:hover {
         bottom: 0;
         top: auto; 
         box-shadow: 0 -2px 1px #13100A; /* Dodaj cień */
+
     }
     nav li {
         align-items: center;
@@ -165,18 +192,19 @@ footer ul li a:hover {
     li a {
         margin-left: 10px;
     }
+    body{
+        width: 100vw;
+    }
     main{
         margin-bottom: auto;
-        margin-top: 150px;
     }
     main >.premieres{
         width: 390px;
         height: 90px;
         font-size: 40px;
-        margin: 10px 0px;
+        margin-bottom: 10px;
         position: fixed;
         top: 0;
-        margin-top: 0px;
         display: flex;
         align-items: flex-end;
     }
@@ -186,7 +214,8 @@ footer ul li a:hover {
     .news{
         width: 390px;
         min-height: calc(100% + 0px);
-        margin-top: 100px;
+        margin-bottom: 90px;
+        flex-shrink: 0; /* Zapobiegnij zmniejszaniu rozmiaru */
     }
     .news-container{
         width: 390px;
