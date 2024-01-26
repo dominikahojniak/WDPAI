@@ -5,7 +5,6 @@ const dateInput = form.querySelector('input[name="date"]');
 const languageInput = form.querySelector('input[name="language"]');
 const descriptionInput = form.querySelector('input[name="description"]');
 function hasValidAuthor(value) {
-    // Sprawdź, czy autor składa się tylko z liter i spacji
     return /^[A-Za-ząćęłńóśźżĄĆĘŁŃÓŚŹŻ,.\s]+$/.test(value);
 }
 function hasValidISBN(value) {
