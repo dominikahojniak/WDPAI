@@ -39,7 +39,6 @@
             <input type="text" placeholder="Search for title or author..." id="searching">
         </form>
         <div class="books" >
-
         </div>
     </main>
     <footer>

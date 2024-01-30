@@ -9,6 +9,10 @@ class DefaultController extends AppController {
         $this->render("signup");
     }
     public function profile() {
+        if(empty($_SESSION['user'])) {
+            $this->render('login', ['messages' => ['Log in to continue']]);
+            exit();
+        }
         $this->render("profile");
     }
     public function addBook() {

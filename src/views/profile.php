@@ -39,7 +39,7 @@
         <div class="news">
             <div class="name"><?php echo $_SESSION['user']['name']; ?></div>
             <div class="email"><?php echo $_SESSION['user']['email']; ?></div>
-            <a href="login" class='logout'>
+            <a href="/logout" class='logout'>
                 Log out
             </a>
         </div>

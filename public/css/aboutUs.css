@@ -10,7 +10,7 @@ nav{
     position: fixed;
     top: 0;
     left: 0;
-    box-shadow: 0 2px 1px #13100A; /* Dodaj cień */
+    box-shadow: 0 2px 1px #13100A;
 }
 nav ul {
     list-style-type: none;
@@ -19,20 +19,20 @@ nav ul {
 }
 nav li {
     display: inline; /* Umieszczenie elementów listy obok siebie (poziomo) */
-    margin-right: 100px; /* Dodanie odstępu między elementami listy */
+    margin-right: 100px;
 }
 
 nav a {
-    text-decoration: none; /* Usuń podkreślenie */
+    text-decoration: none;
     color: #BFAEA0;
     font-family: 'Roboto', sans-serif;
     font-size:20px;
     font-weight: 800;
 }
 nav li img {
-    width: 36px; /* Dostosuj szerokość według potrzeb */
-    height: 39px; /* Dostosuj wysokość według potrzeb */
-    margin-right: 5px; /* Odstęp między obrazem a tekstem linku */
+    width: 36px;
+    height: 39px;
+    margin-right: 5px;
     vertical-align: bottom;
 }
 .images-container{
@@ -66,7 +66,7 @@ main >.trending{
     font-weight: 800;
     display: flex;
     justify-content: center;
-    box-shadow: 0 2px 1px #13100A; /* Dodaj cień */
+    box-shadow: 0 2px 1px #13100A;
     margin-bottom: 10px;
     margin-top: 40px;
 }
@@ -87,7 +87,7 @@ main >.trending{
         position: fixed;
         bottom: 0;
         top: auto;
-        box-shadow: 0 -2px 1px #13100A; /* Dodaj cień */
+        box-shadow: 0 -2px 1px #13100A;
     }
     nav li {
         align-items: center;

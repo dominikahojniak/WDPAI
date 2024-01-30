@@ -18,10 +18,8 @@ class ToReadController extends AppController
     {
         if ($this->isPost()) {
             // Sprawdź, czy użytkownik jest zalogowany
-            if (!isset($_SESSION['user'])) {
-                // Przekieruj na stronę logowania lub wyświetl odpowiedni komunikat
-                // (w zależności od Twoich wymagań)
-                header("Location: /login");
+            if(empty($_SESSION['user'])) {
+                $this->render('login', ['messages' => ['Log in to continue']]);
                 exit();
             }
             $userId = $_SESSION['user']['id'];
@@ -45,14 +43,6 @@ class ToReadController extends AppController
     public function removeBookFromList()
     {
         if ($this->isPost()) {
-            // Sprawdź, czy użytkownik jest zalogowany
-            if (!isset($_SESSION['user'])) {
-                // Przekieruj na stronę logowania lub wyświetl odpowiedni komunikat
-                // (w zależności od Twoich wymagań)
-                header("Location: /login");
-                exit();
-            }
-
             $userId = $_SESSION['user']['id'];
             $bookId = $_POST['book_id'];
 
@@ -74,10 +64,8 @@ class ToReadController extends AppController
     }
     public function toRead()
     {
-        // Sprawdź, czy użytkownik jest zalogowany
-        if (!isset($_SESSION['user'])) {
-            // Przekieruj na stronę logowania lub wyświetl odpowiedni komunikat
-            header("Location: /login");
+        if(empty($_SESSION['user'])) {
+            $this->render('login', ['messages' => ['Log in to continue']]);
             exit();
         }
 

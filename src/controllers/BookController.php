@@ -27,6 +27,10 @@ class BookController extends AppController {
     }
     public function addBook()
     {
+        if(empty($_SESSION['user'])) {
+            $this->render('login', ['messages' => ['Log in to continue']]);
+            exit();
+        }
         $subscriptionPlatforms = $this->platformRepository->getSubscriptionPlatforms();
         $purchasePlatforms = $this->platformRepository->getPurchasePlatforms();
         $books = $this->bookRepository->getBooks();

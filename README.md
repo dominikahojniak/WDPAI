@@ -1,5 +1,6 @@
 # WDPAI
-# justStory
+# justStory 📖
+<img src="logo_brazowe.png" alt="Logo" width="300"/>
 
 ## Description
 
@@ -9,14 +10,14 @@ It allows users to track upcoming book releases and find places where they can p
 
 ## Table of Contents
 
-- [Project Name](#project-name)
+- [Project Name](#justStory)
   - [Description](#description)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Contributing](#contributing)
-  - [License](#license)
+  - [Diagram ERD](#DiagramERD)
   - [Acknowledgments](#acknowledgments)
+  - [Creators](#creators)
 
 ## Installation
 
@@ -25,27 +26,34 @@ It allows users to track upcoming book releases and find places where they can p
 3. Install the necessary dependencies using `npm install` or `pip install -r requirements.txt`.
 
 ## Usage
+- **Registration and Login:**
+  - Allows the user to create an account or log in, providing access to personalized application features.
+![img_5.png](img_5.png)
+- **Home Page:**
+  - What You'll Find on the Home Page...
+    ![img.png](img.png)
+- **Viewing the Premier List:**
+  - Provides the user with access to a list of the latest releases, allowing you to quickly become aware of the latest releases.
+    ![img_1.png](img_1.png)
+- **Adding and Removing to Your To-Read List:**
+  - It allows the user to add and remove items of interest from the "To Read" list.
+    ![img_2.png](img_2.png)
+- **Resource Search:**
+  - The user enters a query in the search box and the system presents results that match the query. Search is possible by title and author.
+    ![img_3.png](img_3.png)
+- **Exploring Books:**
+  - After finding an interesting book, the user can check details about its availability. The application provides information about places where you can purchase or read an e-book. The user receives not only availability data, but also information about the formats available for purchase or reading, allowing the user to adjust the selection to their own preferences or preferred reading equipment.
+    ![img_6.png](img_6.png)
 
-To use this project, follow these steps:
+## DiagramERD
 
-1. Open a terminal and navigate to the project directory.
-2. Run the main application using the appropriate command, e.g., `node app.js` or `python main.py`.
-3. Follow the on-screen instructions to interact with the application.
+![DiagramERD (1).png](..%2F..%2FDownloads%2FDiagramERD%20%281%29.png)
 
-## Contributing
-
-We welcome contributions from the community. If you'd like to contribute to this project, please follow these guidelines:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix: `git checkout -b feature/your-feature`.
-3. Make your changes and commit them: `git commit -m 'Description of your changes'`.
-4. Push to the branch: `git push origin feature/your-feature`.
-5. Submit a pull request detailing your changes and any additional information.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgments
 
-Special thanks to the contributors and open-source projects that inspired this sample README.
+Special thanks to all the contributors and open-source projects that inspired and supported the development of this justStory application. Your passion for literature fuels our commitment to delivering a remarkable book-list experience.
+
+
+## Creators
+The project is developed by Dominika Hojniak. Contact: dominikahojniak@gmail.com

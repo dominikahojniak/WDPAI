@@ -34,7 +34,6 @@ class BookRepository extends Repository
     {
         $connection = $this->database->connect();
 
-        // Rozpocznij transakcję
         $connection->beginTransaction();
         try {
             $stmt = $this->database->connect()->prepare('
@@ -52,11 +51,8 @@ class BookRepository extends Repository
                 $book->getImage(),
                 $book->getDescription()
             ]);
-            // Jeśli wszystko jest w porządku, zatwierdź transakcję
             $lastInsertId = $stmt->fetchColumn();
             $connection->commit();
-
-            // Zwróć lastInsertId
             return $lastInsertId;
         }catch (PDOException $e) {
             $connection->rollBack();
@@ -105,7 +101,7 @@ class BookRepository extends Repository
         $currentDate = date('Y-m-d');
 
         $stmt = $this->database->connect()->prepare('
-        SELECT * FROM books WHERE date >= :currentDate ORDER BY date ASC LIMIT 10
+        SELECT * FROM books WHERE date > :currentDate ORDER BY date ASC LIMIT 10
     ');
         $stmt->bindParam(':currentDate', $currentDate, PDO::PARAM_STR);
         $stmt->execute();
@@ -132,7 +128,6 @@ class BookRepository extends Repository
     {
         $connection = $this->database->connect();
 
-        // Rozpocznij transakcję
         $connection->beginTransaction();
 
         try {
@@ -144,7 +139,6 @@ class BookRepository extends Repository
 
             $stmt = $connection->prepare($query);
 
-            // Tworzymy tablicę z wartościami do przekazania execute
             $values = [];
             foreach ($platformIds as $platformId) {
                 $values[] = $bookId;
