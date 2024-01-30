@@ -60,7 +60,6 @@ class SecurityController extends AppController {
         if ($this->userRepository->getUser($email)) {
             return $this->render('signup', ['messages' => ['Account with this email already exists!']]);
         }
-        //TODO try to use better hash function
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
         $user = new User($email, $hashedPassword, $name);
         $user->setPhone($phone);

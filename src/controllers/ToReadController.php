@@ -17,24 +17,18 @@ class ToReadController extends AppController
     public function addBookToList()
     {
         if ($this->isPost()) {
-            // Sprawdź, czy użytkownik jest zalogowany
             if(empty($_SESSION['user'])) {
                 $this->render('login', ['messages' => ['Log in to continue']]);
                 exit();
             }
             $userId = $_SESSION['user']['id'];
             $bookId = $_POST['book_id'];
-            // Sprawdź, czy książka nie jest już na liście "ToRead" użytkownika
             $isBookInList = $this->toReadRepository->isBookInToReadList($userId, $bookId);
-
             if (!$isBookInList) {
-                // Dodaj książkę do listy "ToRead"
                 $this->toReadRepository->addToReadList($userId, $bookId);
-                // Przekieruj na stronę z informacją o powodzeniu lub inny widok
                 header("Location: /book?id=$bookId&success=true");
                 exit();
             } else {
-                // Książka już istnieje na liście - przekieruj z odpowiednim komunikatem
                 header("Location: /book?id=$bookId&error=exists");
                 exit();
             }
@@ -45,19 +39,10 @@ class ToReadController extends AppController
         if ($this->isPost()) {
             $userId = $_SESSION['user']['id'];
             $bookId = $_POST['book_id'];
-
-            // Sprawdź, czy książka jest na liście "ToRead" użytkownika
             $isBookInList = $this->toReadRepository->isBookInToReadList($userId, $bookId);
-
             if ($isBookInList) {
-                // Usuń książkę z listy "ToRead"
                 $this->toReadRepository->removeFromToReadList($userId, $bookId);
-                // Przekieruj na stronę z informacją o powodzeniu lub inny widok
-                header("Location: /toRead?success=true");
-                exit();
-            } else {
-                // Książka nie istnieje na liście - przekieruj z odpowiednim komunikatem
-                header("Location: /toRead?error=not_in_list");
+                header("Location: /toRead");
                 exit();
             }
         }
@@ -68,14 +53,8 @@ class ToReadController extends AppController
             $this->render('login', ['messages' => ['Log in to continue']]);
             exit();
         }
-
-        // Pobierz ID zalogowanego użytkownika
         $userId = $_SESSION['user']['id'];
-
-        // Pobierz książki z listy "ToRead" danego użytkownika
         $toReadBooks = $this->toReadRepository->getToReadBooks($userId);
-
-        // Przekazuj dane do widoku
         $this->render('toRead', ['toReadBooks' => $toReadBooks]);
     }
 }

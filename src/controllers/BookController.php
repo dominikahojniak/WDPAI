@@ -31,8 +31,6 @@ class BookController extends AppController {
             $this->render('login', ['messages' => ['Log in to continue']]);
             exit();
         }
-        $subscriptionPlatforms = $this->platformRepository->getSubscriptionPlatforms();
-        $purchasePlatforms = $this->platformRepository->getPurchasePlatforms();
         $books = $this->bookRepository->getBooks();
         if ($this->isPost()) {
             if (is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {
@@ -49,13 +47,9 @@ class BookController extends AppController {
                 $image = $_FILES['file']['name'];
                 $description = $_POST['description'];
                 $book = new Book($title, $author, $isbn, $year, $language, $image,$description);
-                $lastInsertId = $this->bookRepository->addBook($book); // Implement this method in your BookRepository if not already present.
-
-// Przypisywanie platform subskrypcyjnych
+                $lastInsertId = $this->bookRepository->addBook($book);
                 $subscriptionPlatforms = isset($_POST['subscription_platforms']) ? $_POST['subscription_platforms'] : [];
                 $this->bookRepository->addBookPlatforms($lastInsertId, $subscriptionPlatforms, 'subscription');
-
-// Przypisywanie platform zakupowych
                 $purchasePlatforms = isset($_POST['purchase_platforms']) ? $_POST['purchase_platforms'] : [];
                 $this->bookRepository->addBookPlatforms($lastInsertId, $purchasePlatforms, 'purchase');
             }
@@ -83,8 +77,7 @@ class BookController extends AppController {
             $bookId = intval($_GET['id']);
             if ($bookId) {
                 $book = $this->bookRepository->getBook($bookId);
-                $subscriptionPlatforms = $this->platformRepository->getSubscriptionPlatforms(); // Dodaj tę linię
-                $purchasePlatforms = $this->platformRepository->getPurchasePlatforms(); // Dodaj tę linię
+
                 if ($book) {
                     $subscriptionPlatforms = $this->platformRepository->getBookSubscriptionPlatforms($bookId);
                     $purchasePlatforms = $this->platformRepository->getBookPurchasePlatforms($bookId);

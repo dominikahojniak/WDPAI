@@ -144,10 +144,8 @@ class BookRepository extends Repository
                 $values[] = $bookId;
                 $values[] = $platformId;
             }
-
             $stmt->execute($values);
 
-            // Jeśli wszystko jest w porządku, zatwierdź transakcję
             $connection->commit();
         } catch (PDOException $e) {
             $connection->rollBack();

@@ -48,7 +48,6 @@ class PlatformRepository extends Repository
 
         return $result;
     }
-    // Metoda do pobierania zakupów z danymi platform
     public function getPurchasePlatforms()
     {
         $connection = $this->database->connect();

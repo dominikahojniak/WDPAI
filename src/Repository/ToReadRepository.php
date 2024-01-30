@@ -7,7 +7,6 @@ class ToReadRepository extends Repository{
     {
         $connection = $this->database->connect();
 
-        // Rozpocznij transakcję
         $connection->beginTransaction();
         try {
             $stmt = $this->database->connect()->prepare('
@@ -16,7 +15,6 @@ class ToReadRepository extends Repository{
     ');
 
             $stmt->execute([$userId, $bookId]);
-            // Jeśli wszystko jest w porządku, zatwierdź transakcję
             $connection->commit();
         }catch (PDOException $e) {
             $connection->rollBack();
@@ -27,7 +25,6 @@ class ToReadRepository extends Repository{
     {
         $connection = $this->database->connect();
 
-        // Rozpocznij transakcję
         $connection->beginTransaction();
         try {
             $stmt = $this->database->connect()->prepare('
@@ -37,7 +34,6 @@ class ToReadRepository extends Repository{
             $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
             $stmt->bindParam(':bookId', $bookId, PDO::PARAM_INT);
             $stmt->execute();
-            // Jeśli wszystko jest w porządku, zatwierdź transakcję
             $connection->commit();
         }catch (PDOException $e) {
             $connection->rollBack();
