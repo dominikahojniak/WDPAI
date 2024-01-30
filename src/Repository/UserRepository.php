@@ -29,7 +29,6 @@ class UserRepository extends Repository
             $user['role']
         );
 
-        // Ustaw identyfikator użytkownika, jeśli jest dostępny
         if (isset($user['id'])) {
             $userObject->setId((int)$user['id']);
         }

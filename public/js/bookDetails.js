@@ -1,4 +1,4 @@
-console.log('Dodano event listenery');
+
 document.querySelectorAll('.news-container').forEach(container => {
     container.addEventListener('click', redirectToBookPage);
 });

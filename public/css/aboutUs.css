@@ -18,7 +18,7 @@ nav ul {
     display: flex;
 }
 nav li {
-    display: inline; /* Umieszczenie elementów listy obok siebie (poziomo) */
+    display: inline; /* elementy obok siebie (poziomo) */
     margin-right: 100px;
 }
 
@@ -52,9 +52,9 @@ body{
 main{
     flex: 1;
     display: flex;
-    flex-direction: column; /* Ustawia układ flexboxa na kolumnowy, aby elementy były pod sobą */
-    align-items: center; /* Wyśrodkuj elementy na osi poziomej */
-    justify-content: start; /* Wyśrodkuj elementy na osi pionowej */
+    flex-direction: column;
+    align-items: center; /* wyśrodkuj elementy na osi poziomej */
+    justify-content: start; /* wyśrodkuj elementy na osi pionowej */
     margin-top: 10vh;
 }
 main >.trending{

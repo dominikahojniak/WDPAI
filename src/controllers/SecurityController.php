@@ -68,10 +68,10 @@ class SecurityController extends AppController {
         return $this->render('login', ['messages' => ['You\'ve been succesfully registrated!']]);
     }
     public function logout() {
-        // Zniszcz sesję
+
         session_destroy();
 
-        // Przekieruj użytkownika na stronę logowania
+
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/login");
     }

@@ -1,4 +1,6 @@
 public/uploads/
+public/platforms/
+img
 .idea
 .vscode
 config.php

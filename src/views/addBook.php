@@ -42,7 +42,6 @@
                 <input name="language" type="text" placeholder="language" id="email">
                 <input name="description" type="text" placeholder="description" id="email">
                 <input type="file" name="file"/>
-                <!-- Subscription Platforms: -->
                 <label for="platform-label">Subscription Platforms:</label>
                 <div class="platform-container" id="subscription-platforms">
                 <?php foreach ($subscriptionPlatforms as $platform): ?>

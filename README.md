@@ -44,7 +44,9 @@ It allows users to track upcoming book releases and find places where they can p
 - **Exploring Books:**
   - After finding an interesting book, the user can check details about its availability. The application provides information about places where you can purchase or read an e-book. The user receives not only availability data, but also information about the formats available for purchase or reading, allowing the user to adjust the selection to their own preferences or preferred reading equipment.
     ![img_6.png](img_6.png)
-
+- **Adding a Book from the Admin View:**
+   - How it looks when admin want to add a book.
+      ![img_8.png](img_8.png)
 ## DiagramERD
 
 ![img_7.png](img_7.png)

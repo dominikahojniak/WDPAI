@@ -22,7 +22,7 @@ nav{
     position: fixed;
     top: 0;
     left: 0;
-    box-shadow: 0 2px 1px #13100A; /* Dodaj cień */
+    box-shadow: 0 2px 1px #13100A;
 }
 nav ul {
     list-style-type: none;
@@ -30,24 +30,24 @@ nav ul {
     display: flex;
 }
 nav li {
-    display: inline; /* Umieszczenie elementów listy obok siebie (poziomo) */
-    margin-right: 100px; /* Dodanie odstępu między elementami listy */
+    display: inline;
+    margin-right: 100px;
 }
 
 nav a {
-    text-decoration: none; /* Usuń podkreślenie */
+    text-decoration: none;
     color: #BFAEA0;
     font-family: 'Roboto', sans-serif;
     font-size:20px;
     font-weight: 800;
 }
 nav li a[href="home"] {
-    color: #394130; /* Kolor, jaki chcesz ustawić */
+    color: #394130;
 }
 nav li img {
-    width: 36px; /* Dostosuj szerokość według potrzeb */
-    height: 39px; /* Dostosuj wysokość według potrzeb */
-    margin-right: 5px; /* Odstęp między obrazem a tekstem linku */
+    width: 36px;
+    height: 39px;
+    margin-right: 5px;
     vertical-align: bottom;
 }
 nav li.addBook {
@@ -56,11 +56,11 @@ nav li.addBook {
     margin-right: 2vw;
 }
 .images-container {
-    display: flex; /* Ustawienie kontenera na flexbox */
-    align-items: center; /* Wyśrodkowanie w pionie */
+    display: flex;
+    align-items: center;
 }
 nav li.addBook a {
-    color: #FF0000; /* Kolor czerwony */
+    color: #FF0000;
 }
 body{
     background-color: #1F1910;
@@ -75,12 +75,12 @@ body{
 }
 main{
     display: flex;
-      flex-direction: column; /* Ustawia układ flexboxa na kolumnowy, aby elementy były pod sobą */
-      align-items: center; /* Wyśrodkuj elementy na osi poziomej */
-      justify-content: start; /* Wyśrodkuj elementy na osi pionowej */
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
       margin-bottom: 0px;
     margin-top: 90px;
-    flex-shrink: 0; /* Zapobiegnij zmniejszaniu rozmiaru */
+    flex-shrink: 0;
     }
 main >.catalog{
     background-color: #1F1910;
@@ -91,7 +91,7 @@ main >.catalog{
     font-weight: 800;
     display: flex;
     justify-content: center;
-    box-shadow: 0 2px 1px #13100A; /* Dodaj cień */
+    box-shadow: 0 2px 1px #13100A;
     margin-bottom: 10px;
     margin-top: 20px;
 }
@@ -108,17 +108,17 @@ display: none;
     gap: 1rem;
     flex-direction: row;
     justify-content: flex-start;
-    overflow-x: auto; /* Dodaj przewijanie poziome */
-    white-space: nowrap; /* Zablokuj zawijanie tekstu, aby umożliwić przewijanie poziome */
+    overflow-x: auto;
+    white-space: nowrap;
     margin-left: 1%;
 }
 .news-container {
-    width: 120px; /* Dostosuj szerokość według potrzeb */
-    height: 150px; /* Ustawienie wysokości proporcjonalnie do szerokości */
+    width: 120px;
+    height: 150px;
 }
 .news-image {
-    width: 120px; /* Dostosuj szerokość według potrzeb */
-    height: 160px; /* Ustawienie wysokości proporcjonalnie do szerokości */
+    width: 120px;
+    height: 160px;
 }
 .news-description {
     margin-left: 0px;
@@ -138,9 +138,9 @@ display: none;
     align-items: center;
     text-decoration: none;
     overflow-wrap: break-word;
-    white-space: nowrap; /* Dodane, aby tekst nie łamał się na nowe linie */
+    white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; /* Dodane, aby ukryć nadmiarowy tekst i dodać trzy kropki */
+    text-overflow: ellipsis;
 }
 footer {
     background-color: #0F0C08;
@@ -161,8 +161,8 @@ footer ul {
     margin-left: 1%;
 }
 footer li {
-    display: inline; /* Umieszczenie elementów listy obok siebie (poziomo) */
-    margin-right: 100px; /* Dodanie odstępu między elementami listy */
+    display: inline;
+    margin-right: 100px;
     font-family: 'Roboto', sans-serif;
     font-size:20px;
     font-weight: 800;
@@ -171,28 +171,28 @@ footer li:last-child{
     display: none;
 }
 footer .store a{
-    display: inline; /* dodaj to, aby na większych ekranach obrazy w sekcji store były widoczne */
+    display: inline;
 }
 footer .store img{
-    display: inline; /* dodaj to, aby na większych ekranach obrazy w sekcji store były widoczne */
+    display: inline;
 }
 footer .store a:first-child {
-    display: none; /* dodaj to, aby na większych ekranach pierwszy obraz w sekcji store był ukryty */
+    display: none;
 }
 footer ul li a {
-    text-decoration: none; /* Usuń podkreślenie */
-    color: #BFAEA0; /* Kolor linku */
+    text-decoration: none;
+    color: #BFAEA0;
 }
 
 footer ul li a:hover {
-    color: #394130; /* Kolor linku po najechaniu myszką */
+    color: #394130;
 }
 @media (max-width: 900px) {
     nav{
         position: fixed;
         bottom: 0;
         top: auto; 
-        box-shadow: 0 -2px 1px #13100A; /* Dodaj cień */
+        box-shadow: 0 -2px 1px #13100A;
         padding: 0;
         width: calc(100vw - 1px);
     }
@@ -243,7 +243,7 @@ footer ul li a:hover {
         top: 0; 
         background-color: #1F1910;
         opacity: 1.0;
-        box-shadow: 0 2px 1px #13100A; /* Dodaj cień */
+        box-shadow: 0 2px 1px #13100A;
         width: calc(100vw - 2rem);
     }
     footer ul li {

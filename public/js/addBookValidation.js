@@ -5,21 +5,23 @@ const dateInput = form.querySelector('input[name="date"]');
 const languageInput = form.querySelector('input[name="language"]');
 const descriptionInput = form.querySelector('input[name="description"]');
 function hasValidAuthor(value) {
+    //czy autor składa się tylko z liter i znakow specjalnych
     return /^[A-Za-ząćęłńóśźżĄĆĘŁŃÓŚŹŻ,.\s]+$/.test(value);
 }
 function hasValidISBN(value) {
-    // Sprawdź, czy ISBN składa się tylko z cyfr i ma dokładnie 13 znaków
+    //czy ISBN składa się tylko z cyfr i ma dokładnie 13 znaków
     return /^\d{13}$/.test(value);
 }
 function hasValidDate(value) {
-    // Sprawdź, czy data ma poprawny format YYYY-MM-DD
+    //czy data ma poprawny format YYYY-MM-DD
     return /^\d{4}-\d{2}-\d{2}$/.test(value);
 }
 function hasValidLanguage(value) {
-    // Sprawdź, czy język składa się tylko z liter
+    //czy język składa się tylko z liter
     return /^[A-Za-z]+$/.test(value);
 }
 function hasValidDescription(value) {
+    //czy opis ma maks 2000 znakow
     return value.length <= 2000;
 }
 function markValidation(element, condition) {
@@ -51,6 +53,7 @@ function validateDescription() {
     }, 1000);
 }
 function hasOptionsSelected(groupId) {
+    //czy przynajmniej jedna opcja zostala wybrana
     const group = document.getElementById(groupId);
     const checkboxes = group.querySelectorAll('input[type="checkbox"]');
     return Array.from(checkboxes).some(checkbox => checkbox.checked);

@@ -32,7 +32,7 @@ nav{
     position: fixed;
     top: 0;
     left: 0;
-    box-shadow: 0 2px 1px #13100A; /* Dodaj cień */
+    box-shadow: 0 2px 1px #13100A;
 }
 nav ul {
     list-style-type: none;
@@ -40,24 +40,24 @@ nav ul {
     display: flex;
 }
 nav li {
-    display: inline; /* Umieszczenie elementów listy obok siebie (poziomo) */
-    margin-right: 100px; /* Dodanie odstępu między elementami listy */
+    display: inline;
+    margin-right: 100px;
 }
 
 nav a {
-    text-decoration: none; /* Usuń podkreślenie */
+    text-decoration: none;
     color: #BFAEA0;
     font-family: 'Roboto', sans-serif;
     font-size:20px;
     font-weight: 800;
 }
 nav li a[href="home"] {
-    color: #394130; /* Kolor, jaki chcesz ustawić */
+    color: #394130;
 }
 nav li img {
-    width: 36px; /* Dostosuj szerokość według potrzeb */
-    height: 39px; /* Dostosuj wysokość według potrzeb */
-    margin-right: 5px; /* Odstęp między obrazem a tekstem linku */
+    width: 36px;
+    height: 39px;
+    margin-right: 5px;
     vertical-align: bottom;
 }
 body{
@@ -75,12 +75,12 @@ main{
     flex: 1;
     display: flex;
     height: 100vh;
-  flex-direction: row; /* Ustawia układ flexboxa na kolumnowy, aby elementy były pod sobą */
+  flex-direction: row;
   margin-bottom: 0px;
-    align-items: center; /* Wyśrodkuj elementy na osi poziomej */
-    justify-content: start; /* Wyśrodkuj elementy na osi pionowej */
+    align-items: center;
+    justify-content: start;
     margin-top: 90px;
-    flex-shrink: 0; /* Zapobiegnij zmniejszaniu rozmiaru */
+    flex-shrink: 0;
 }
 main >.left{
     width: calc(100vw / 6);
@@ -126,11 +126,11 @@ main >.right{
     justify-content: flex-start;
     flex-direction: column;
     margin-bottom: 90px;
-    flex-shrink: 0; /* Zapobiegnij zmniejszaniu rozmiaru */
+    flex-shrink: 0;
 }
 .news-image {
-    width: 15rem; /* Dostosuj szerokość według potrzeb */
-    height: 20rem; /* Ustawienie wysokości proporcjonalnie do szerokości */
+    width: 15rem;
+    height: 20rem;
 }
 .news-description {
     margin-left: 0px;
@@ -161,10 +161,10 @@ main >.right{
     flex-direction: row;
     gap: 2rem;
     margin-bottom: 10px;
-    box-shadow: 0 2px 1px #13100A; /* Dodaj cień */
-    overflow-x: auto; /* Dodaj przewijanie poziome */
+    box-shadow: 0 2px 1px #13100A;
+    overflow-x: auto;
     align-items: flex-end;
-    flex-shrink: 0; /* Zapobiegnij zmniejszaniu rozmiaru */
+    flex-shrink: 0;
 }
 .items{
     display: flex;
@@ -176,11 +176,11 @@ main >.right{
     flex-direction: row;
 }
 .platform-item {
-    margin-right: 10px; /* Dodaj odstęp między elementami w items */
+    margin-right: 10px;
 }
 .items .platform-image {
-    width: 65px; /* Dostosuj szerokość według potrzeb */
-    height: 65px; /* Dostosuj wysokość według potrzeb */
+    width: 65px;
+    height: 65px;
     margin-bottom: 10px;
 }
 .buy{
@@ -190,10 +190,10 @@ main >.right{
     flex-direction: row;
     gap: 2rem;
     margin-bottom: 10px;
-    box-shadow: 0 2px 1px #13100A; /* Dodaj cień */
+    box-shadow: 0 2px 1px #13100A;
     align-items: flex-end;
-    overflow-x: auto; /* Dodaj przewijanie poziome */
-    flex-shrink: 0; /* Zapobiegnij zmniejszaniu rozmiaru */
+    overflow-x: auto;
+    flex-shrink: 0;
 }
 .news-title{
     margin-left: 5px;
@@ -202,7 +202,7 @@ main >.right{
     width: 140px;
 }
 .news-title-container {
-    width: 140px; /* Ustaw szerokość kontenera dla .news-title */
+    width: 140px;
     align-items: flex-end;
 }
 .news-title h3 {
@@ -232,26 +232,26 @@ footer ul {
     margin-left: 1%;
 }
 footer li {
-    display: inline; /* Umieszczenie elementów listy obok siebie (poziomo) */
-    margin-right: 100px; /* Dodanie odstępu między elementami listy */
+    display: inline;
+    margin-right: 100px;
     font-family: 'Roboto', sans-serif;
     font-size:20px;
     font-weight: 800;
 }
 footer ul li a {
-    text-decoration: none; /* Usuń podkreślenie */
-    color: #BFAEA0; /* Kolor linku */
+    text-decoration: none;
+    color: #BFAEA0;
 }
 
 footer ul li a:hover {
-    color: #394130; /* Kolor linku po najechaniu myszką */
+    color: #394130;
 }
 @media (max-width: 900px) {
     nav{
         position: fixed;
         bottom: 0;
         top: auto; 
-        box-shadow: 0 -2px 1px #13100A; /* Dodaj cień */
+        box-shadow: 0 -2px 1px #13100A;
         width: calc(100vw - 1px);
     }
     body{
@@ -279,7 +279,7 @@ footer ul li a:hover {
         flex-direction: column;
         min-height: calc(100% + 1px);
         margin-top: auto;
-        flex-shrink: 0; /* Zapobiegnij zmniejszaniu rozmiaru */
+        flex-shrink: 0;
     }
     main >.left{
         width: 390px;
@@ -305,7 +305,7 @@ footer ul li a:hover {
         display: flex;
         justify-content: start;
         margin-bottom: 90px;
-        flex-shrink: 0; /* Zapobiegnij zmniejszaniu rozmiaru */
+        flex-shrink: 0;
     }
     .news-description {
         margin-right: 0px;

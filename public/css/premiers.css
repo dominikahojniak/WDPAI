@@ -16,7 +16,7 @@ nav{
     position: fixed;
     top: 0;
     left: 0;
-    box-shadow: 0 2px 1px #13100A; /* Dodaj cień */
+    box-shadow: 0 2px 1px #13100A;
 }
 nav ul {
     list-style-type: none;
@@ -24,24 +24,24 @@ nav ul {
     display: flex;
 }
 nav li {
-    display: inline; /* Umieszczenie elementów listy obok siebie (poziomo) */
-    margin-right: 100px; /* Dodanie odstępu między elementami listy */
+    display: inline;
+    margin-right: 100px;
 }
 
 nav a {
-    text-decoration: none; /* Usuń podkreślenie */
+    text-decoration: none;
     color: #BFAEA0;
     font-family: 'Roboto', sans-serif;
     font-size:20px;
     font-weight: 800;
 }
 nav li a[href="premieres"] {
-    color: #394130; /* Kolor, jaki chcesz ustawić */
+    color: #394130;
 }
 nav li img {
-    width: 36px; /* Dostosuj szerokość według potrzeb */
-    height: 39px; /* Dostosuj wysokość według potrzeb */
-    margin-right: 5px; /* Odstęp między obrazem a tekstem linku */
+    width: 36px;
+    height: 39px;
+    margin-right: 5px;
     vertical-align: bottom;
 }
 body{
@@ -58,12 +58,12 @@ body{
 main{
     flex: 1;
     display: flex;
-  flex-direction: column; /* Ustawia układ flexboxa na kolumnowy, aby elementy były pod sobą */
-  align-items: center; /* Wyśrodkuj elementy na osi poziomej */
-  justify-content: start; /* Wyśrodkuj elementy na osi pionowej */
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
   margin-bottom: 0px;
     margin-top: 90px;
-    flex-shrink: 0; /* Zapobiegnij zmniejszaniu rozmiaru */
+    flex-shrink: 0;
 }
 main >.premieres{
     background-color: #1F1910;
@@ -74,7 +74,7 @@ main >.premieres{
     font-weight: 800;
     display: flex;
     justify-content: center;
-    box-shadow: 0 2px 1px #13100A; /* Dodaj cień */
+    box-shadow: 0 2px 1px #13100A;
     margin-bottom: 10px;
     margin-top: 0px;
 }
@@ -91,7 +91,7 @@ main >.premieres{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 2px 1px #13100A; /* Dodaj cień */
+    box-shadow: 0 2px 1px #13100A;
 }
 .news-container > img{
     margin-bottom: 10px;
@@ -157,26 +157,26 @@ footer ul {
     margin-left: 1%;
 }
 footer li {
-    display: inline; /* Umieszczenie elementów listy obok siebie (poziomo) */
-    margin-right: 100px; /* Dodanie odstępu między elementami listy */
+    display: inline;
+    margin-right: 100px;
     font-family: 'Roboto', sans-serif;
     font-size:20px;
     font-weight: 800;
 }
 footer ul li a {
-    text-decoration: none; /* Usuń podkreślenie */
-    color: #BFAEA0; /* Kolor linku */
+    text-decoration: none;
+    color: #BFAEA0;
 }
 
 footer ul li a:hover {
-    color: #394130; /* Kolor linku po najechaniu myszką */
+    color: #394130;
 }
 @media (max-width: 900px) {
     nav{
         position: fixed;
         bottom: 0;
         top: auto; 
-        box-shadow: 0 -2px 1px #13100A; /* Dodaj cień */
+        box-shadow: 0 -2px 1px #13100A;
 
     }
     nav li {
@@ -215,7 +215,7 @@ footer ul li a:hover {
         width: 390px;
         min-height: calc(100% + 0px);
         margin-bottom: 90px;
-        flex-shrink: 0; /* Zapobiegnij zmniejszaniu rozmiaru */
+        flex-shrink: 0;
     }
     .news-container{
         width: 390px;
