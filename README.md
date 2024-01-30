@@ -47,8 +47,7 @@ It allows users to track upcoming book releases and find places where they can p
 
 ## DiagramERD
 
-![DiagramERD (1).png](..%2F..%2FDownloads%2FDiagramERD%20%281%29.png)
-
+![img_7.png](img_7.png)
 
 ## Acknowledgments
 
