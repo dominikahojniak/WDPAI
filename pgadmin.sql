@@ -800,6 +800,22 @@ $BODY$;
 ALTER FUNCTION public.update_book_last_modified()
     OWNER TO docker;
 
+-- View: public.latest_releases
+
+-- DROP VIEW public.latest_releases;
+
+CREATE OR REPLACE VIEW public.latest_releases
+ AS
+SELECT title,
+       author,
+    date
+FROM books
+WHERE date >= CURRENT_DATE
+ORDER BY date;
+
+ALTER TABLE public.latest_releases
+    OWNER TO docker;
+
 -- Completed on 2024-01-31 09:04:19 UTC
 
 --
